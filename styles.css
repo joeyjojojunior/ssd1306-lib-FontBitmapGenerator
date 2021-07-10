@@ -1,0 +1,84 @@
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+#container {
+    width: 100%;
+}
+
+#contentDiv {
+    margin: auto;
+    width: 100%;
+}
+
+#optionsTable {
+    margin: auto;
+    border-spacing: 0px;
+    border: 1px solid white;
+    padding: 15px;
+}
+
+#optionsHead {
+    font-size: 30px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+#optionsFoot {
+    padding-top: 20px;
+}
+
+.optionsCell {
+    padding-right: 50px;
+}
+
+.charTables {
+    margin: auto;
+    border-spacing: 0px;
+    border: 1px solid white;
+}
+
+.charTablesCellChar {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 100px;
+    font-weight: bold;
+    color: white;
+    padding: 100px;
+    text-align: center;
+    border-spacing: 0px;
+    border: 1px solid white;
+}
+
+.charTablesCellTable {
+    border-spacing: 0px;
+    border: 1px solid white;
+}
+
+.tableCell {
+    height: 25px;
+    width: 25px;
+}
+
+#inputDiv,
+#tablesDiv,
+#genBtnDiv,
+#outputDiv {
+    margin: auto;
+    width: 75%;
+    padding: 10px;
+}
+
+button {
+    margin: 0 auto;
+    display: block;
+}
+
+.inputField {
+    width: 130%;
+}
+
+#outputField {
+    width: 100%;
+}
