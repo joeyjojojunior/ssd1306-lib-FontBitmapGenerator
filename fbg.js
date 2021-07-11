@@ -111,6 +111,7 @@ function deselectCell(td) {
  * and the individual tables for each character.
  */
 function initAllTables() {
+    console.log(chars.length);
     var tablesDiv = document.getElementById("tablesDiv");
 
     var tbl = document.createElement('table');
@@ -118,21 +119,24 @@ function initAllTables() {
 
     var tbdy = document.createElement('tbody');
 
-    for (var row = 0; row < chars.length; row++) {
+    for (var row = 0; row < chars.length / 5; row++) {
         var tr = document.createElement('tr');
         tr.className = "charTablesRow";
-        var tdChar = document.createElement('td');
-        tdChar.className = "charTablesCellChar";
-        tdChar.innerHTML += chars[row];
-        var tdTable = document.createElement('td');
-        tdTable.className = "charTablesCellTable";
-        var
-            tdTableContents = initCharTable();
-        tdTableContents.id = `charTable${row}`;
-        tdTable.appendChild(tdTableContents);
-        tr.appendChild(tdChar);
-        tr.appendChild(tdTable);
+
+        for (var j = 0; j < 5; j++) {
+            var tdChar = document.createElement('td');
+            tdChar.className = "charTablesCellChar";
+            tdChar.innerHTML += chars[j + row * 5];
+            var tdTable = document.createElement('td');
+            tdTable.className = "charTablesCellTable";
+            var tdTableContents = initCharTable();
+            tdTableContents.id = `charTable${j + row * 5}`;
+            tdTable.appendChild(tdTableContents);
+            tr.appendChild(tdChar);
+            tr.appendChild(tdTable);
+        }
         tbdy.appendChild(tr);
+
     }
     tbl.appendChild(tbdy);
     tablesDiv.appendChild(tbl);
@@ -140,8 +144,7 @@ function initAllTables() {
 
 
 /*
- * Creates the main table for the whole character set
- * and the individual table for each character.
+ * Creates a table for a single character.
  */
 function initCharTable() {
     var tbl = document.createElement('table');
